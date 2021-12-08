@@ -2,7 +2,13 @@
 
 {% block content%}
     <h1>using block and class ="container"</h1> 
-    
- 
-    
+    {% for  test in testrunlist %}
+        <p>{{test}}
+            {% endfor %}</p>
+    {% if rating >= 3 %}
+        <h1>Good using If,else</h1>
+    {% elif rating <= 2 %} 
+        <p>Bad using if,else<p>
+    {%endif%}
+
 {% endblock %}

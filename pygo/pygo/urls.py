@@ -20,7 +20,7 @@ from myblog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("homepage/",views.homepage),
+    path("home/",views.homepage),
     path("page1/", views.page1)
   
 ]
