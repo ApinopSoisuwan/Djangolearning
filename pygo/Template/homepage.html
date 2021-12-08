@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    <h2>HELLOWORLD</h2>
-    <p>Testing_using_list</p>
+{% extends "layout.html"%}
 
-    {% for test in testrunlist %}
-        <p>{{ test }}</p>
-    {% endfor %}
-    <h1>Test_if</h1>
-    {% if rating > 3 %}
-        <p>good</p>
-    {% else %}
-        <p>bad</p>
-    {%endif%}
-</body>
-</html>
+{% block content%}
+    <h1>using block and class ="container"</h1> 
+    
+ 
+    
+{% endblock %}

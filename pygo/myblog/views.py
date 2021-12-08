@@ -7,8 +7,12 @@ def layout(request):
     return render(request,"layout_homepage.html")
 
 def homepage (request):
-    rating = 3
+    rating = 4
     testrunlist = ["test01","test02","test03"]
     return render(request,"homepage.html",{'testrunlist':testrunlist,"rating":rating})
+
+def page1(request):
+    sword = ['Wood sword','Iron sword','Gold sword','Platinum sword','Diamond sword','Legendary sword']
+    return render(request, "page1.html",{"sword":sword})
 
 

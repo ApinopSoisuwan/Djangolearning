@@ -20,9 +20,9 @@ from myblog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.layout),
-    path('testif',views.homepage)
-
+    path("homepage/",views.homepage),
+    path("page1/", views.page1)
+  
 ]
 
 
