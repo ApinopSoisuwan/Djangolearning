@@ -4,9 +4,11 @@ from django.http import HttpResponse
 # Create your views here.
 
 def layout(request):
-    return HttpResponse("HELLO")
+    return render(request,"layout_homepage.html")
 
 def homepage (request):
-    return render(request,'homepage.html')
+    rating = 3
+    testrunlist = ["test01","test02","test03"]
+    return render(request,"homepage.html",{'testrunlist':testrunlist,"rating":rating})
 
 

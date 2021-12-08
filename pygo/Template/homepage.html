@@ -8,6 +8,16 @@
 </head>
 <body>
     <h2>HELLOWORLD</h2>
-    
+    <p>Testing_using_list</p>
+
+    {% for test in testrunlist %}
+        <p>{{ test }}</p>
+    {% endfor %}
+    <h1>Test_if</h1>
+    {% if rating > 3 %}
+        <p>good</p>
+    {% else %}
+        <p>bad</p>
+    {%endif%}
 </body>
 </html>
