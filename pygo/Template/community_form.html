@@ -1,0 +1,15 @@
+{% extends "layout.html"%}
+
+{% block content %}
+    <h1 align="center">Learning how to using form in django</h1>
+<form action="addform" method="get">
+    <div class="form-group">
+        <label for="">Using class form-group and class="form-control"</label>
+        <input type="text" class="form-control" name="part_1">
+    </div>
+    <div class="form-group">
+        <label for="">part_2</label>
+        <input type="text" class="form-control" name='part_2'>
+    </div>
+    <input type="submit" value="Using Value for bottom">
+{% endblock %}

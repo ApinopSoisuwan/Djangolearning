@@ -15,4 +15,12 @@ def page1 (request):
     sword = ['Wood sword','Iron sword','Gold sword','Platinum sword','Diamond sword','Legendary sword']
     return render(request, "page1.html",{"sword":sword})
 
+def community (request):
+    return render(request, "community_form.html")
+
+def addform(request):
+    a=request.GET["part_1"]
+    b=request.GET["part_2"]
+    return render((request), "addform.html",{"p1": a,"p2":b})
+
 

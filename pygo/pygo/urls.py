@@ -21,8 +21,9 @@ from myblog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("home/",views.homepage),
-    path("page1/", views.page1)
-  
+    path("page1/", views.page1),
+    path("community_get/",views.community),
+    path("community_get/addform/" ,views.addform)
 ]
 
 
