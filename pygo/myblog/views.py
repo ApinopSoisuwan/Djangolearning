@@ -16,11 +16,19 @@ def page1 (request):
     return render(request, "page1.html",{"sword":sword})
 
 def community (request):
-    return render(request, "community_form.html")
+    return render(request, "community_form_get.html")
 
-def addform(request):
+def addget(request):
     a=request.GET["part_1"]
     b=request.GET["part_2"]
     return render((request), "addform.html",{"p1": a,"p2":b})
+
+def add_post(request):
+    return render(request, "community_form_post.html")
+
+def addpost(request):
+    a=request.POST["P1"]
+    b=request.POST["p2"]
+    return render(request, "addpost.html",{"p1":a,"p2":b})
 
 

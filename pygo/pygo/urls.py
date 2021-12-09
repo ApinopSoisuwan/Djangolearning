@@ -23,7 +23,9 @@ urlpatterns = [
     path("home/",views.homepage),
     path("page1/", views.page1),
     path("community_get/",views.community),
-    path("community_get/addform/" ,views.addform)
+    path("community_get/addform/" ,views.addget),
+    path("community_post/",views.add_post),
+    path("community_post/addpost/",views.addpost)
 ]
 
 
