@@ -1,5 +1,8 @@
 from django.shortcuts import render 
 from django.http import HttpResponse
+from myblog.models import community_post
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -22,5 +25,33 @@ def addget(request):
     a = request.POST["part1"]
     b = request.POST["part2"]
     return render((request), "addform.html",{"p1" : a,"p2" : b})
+
+def using_object(request):
+    build = community_post.objects.all
+    return render(request, "object.html",{"data":build})
+
+def register(request):
+    return render(request, "register.html")
+
+def com_register(request):
+    username = request.POST["user"]
+    password = request.POST["Password"]
+    repassword = request.POST["re_Password"]
+    firstname = request.POST["First_Name"]
+    lastname = request.POST["Last_Name"]
+    email = request.POST["Email"]
+
+    user=User.objects.create_user(
+        username="username",
+        password="password",
+        first_name="firstname",
+        last_name="lastname",
+        email="email"
+    )
+
+    user.save()
+    return render(request, "register_com.html")
+
+
 
 

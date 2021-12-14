@@ -19,11 +19,15 @@ from myblog import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
+    path("home/",views.homepage),
     path("",views.homepage),
     path("page1/", views.page1),
     path("community_get/",views.community),
-    path("community_get/addform",views.addget)
+    path("community_get/addform",views.addget),
+    path("object/",views.using_object),
+    path("register/", views.register),
+    path("register/complete",views.com_register)
 ]
 #community_form/
 
