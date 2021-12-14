@@ -42,11 +42,11 @@ def com_register(request):
     email = request.POST["Email"]
 
     user=User.objects.create_user(
-        username="username",
-        password="password",
-        first_name="firstname",
-        last_name="lastname",
-        email="email"
+        username=username,
+        password=password,
+        first_name=firstname,
+        last_name=lastname,
+        email=email
     )
 
     user.save()

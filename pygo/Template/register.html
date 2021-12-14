@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
-{% block content_2 %}
-    {% csrf_token %}
+
+{% block content %}
+
     <h2 aligh="center">Create ID</h2>
-<form action="addform" method="post"> 
+<form action="complete" method="post">
+    {% csrf_token %}
     <div class="form-group">
         <label for="">username</label>
         <input type="text" class="form-control" name="user">
@@ -27,13 +29,7 @@
             <label for="">Re-Password</label>
             <input type="password" class="form-control" name="re_Password">
             <div>
+
     <input type="submit" value="Register" >
-
-            
-
-
-        
-
-
 
 {% endblock %}
