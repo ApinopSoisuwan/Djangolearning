@@ -1,4 +1,4 @@
-from django.shortcuts import render 
+from django.shortcuts import render,redirect 
 from django.http import HttpResponse
 from myblog.models import community_post
 from django.contrib.auth.models import User
@@ -41,16 +41,26 @@ def com_register(request):
     lastname = request.POST["Last_Name"]
     email = request.POST["Email"]
 
-    user=User.objects.create_user(
-        username=username,
-        password=password,
-        first_name=firstname,
-        last_name=lastname,
-        email=email
-    )
-
-    user.save()
-    return render(request, "register_com.html")
+    if password == repassword :
+        if User.objects.filter(username=username).exists():
+            print("User exists")
+            return redirect("/register")
+        elif User.objects.filter(email=email).exists():
+            print("Email exists")
+            return redirect("/register")
+        else:    
+            user=User.objects.create_user(
+            username=username,
+            password=password,
+            first_name=firstname,
+            last_name=lastname,
+            email=email
+        )
+            user.save()
+            print("Register Complete")
+            return redirect("/home")
+    else:
+        return redirect("/register")
 
 
 
