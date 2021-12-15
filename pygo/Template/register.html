@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    {% for mess in messages %}
+    <div class="alert alert-danger" role="alert">
+        {{mess}}
+      </div>
+    {% endfor %}
 
     <h2 aligh="center">Create ID</h2>
 <form action="complete" method="post">

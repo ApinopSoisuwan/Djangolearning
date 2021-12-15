@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect 
 from django.http import HttpResponse
 from myblog.models import community_post
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,auth
+from django.contrib import messages
 
 
 # Create your views here.
@@ -43,10 +44,10 @@ def com_register(request):
 
     if password == repassword :
         if User.objects.filter(username=username).exists():
-            print("User exists")
+            messages.info(request, "User exists")
             return redirect("/register")
         elif User.objects.filter(email=email).exists():
-            print("Email exists")
+            messages.info(request, "Email exists")
             return redirect("/register")
         else:    
             user=User.objects.create_user(
@@ -60,7 +61,22 @@ def com_register(request):
             print("Register Complete")
             return redirect("/home")
     else:
+        messages.info(request, "Password not exists")
         return redirect("/register")
+
+def loginform (request):
+    return render(request,"loginform.html")
+
+def login (request):
+    user=request.POST["user"]
+    password=request.POST['password']
+    check = auth.authenticate(username=user,password=password)
+    if check is not None:
+        auth.login(request,check)
+        return redirect('/home')
+    else:
+        messages.info(request, "try again")
+        return redirect("/loginform")
 
 
 
