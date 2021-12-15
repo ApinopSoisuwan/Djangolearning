@@ -78,6 +78,12 @@ def login (request):
         messages.info(request, "try again")
         return redirect("/loginform")
 
+def logout(request):
+    auth.logout(request)
+    return redirect("/home")
+
+
+
 
 
 

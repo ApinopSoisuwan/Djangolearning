@@ -29,7 +29,8 @@ urlpatterns = [
     path("register/", views.register),
     path("register/complete",views.com_register),
     path("loginform/",views.loginform),
-    path("login",views.login)
+    path("login",views.login),
+    path("logout",views.logout)
 ]
 #community_form/
 
